@@ -1,0 +1,6 @@
+Flask
+transformers[torch]
+transformers
+sentencepiece
+accelerate
+protobuf

@@ -4,7 +4,9 @@ from flask import Flask, request
 
 app = Flask(__name__)
 pt.java.init()
-indexref = pt.IndexRef.of("D:\magisterka\python_BM25\index_full\data.properties")
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname, "index\data.properties")
+indexref = pt.IndexRef.of(filename)
 
 pipe = (pt.terrier.Retriever(indexref, wmodel="BM25") >> 
     pt.rewrite.RM3(indexref) >> 
